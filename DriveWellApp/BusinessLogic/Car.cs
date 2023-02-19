@@ -18,8 +18,8 @@ namespace DriveWellApp.BusinessLogic
         {
             get{ return _vin; }
             set 
-            { if (string.IsNullOrEmpty(value))
-                    throw new Exception("Vin cannot be empty");
+            { if (string.IsNullOrEmpty(value) || !value.All(char.IsLetterOrDigit) || value.Length == 17)
+                    throw new Exception("Vin can only be string containing 17 alphanumeric characters.");
                     _vin = value;       
             }
 
@@ -28,7 +28,8 @@ namespace DriveWellApp.BusinessLogic
         {
             get => _carMake;
             set
-            {
+            {if (string.IsNullOrEmpty(value))
+                    throw new Exception("Car amke cannot be empty");
                 _carMake = value;
             }
         }
@@ -46,7 +47,8 @@ namespace DriveWellApp.BusinessLogic
         {
             get => _price; 
             set
-            {
+            {if (value <= 0)
+                    throw new Exception("Price cannot be negative and zero");
                 _price = value;
             }
         }
@@ -55,7 +57,8 @@ namespace DriveWellApp.BusinessLogic
         {
             get => _modelYear; 
             set
-            {
+            {if (value < 2000 || value > DateTime.Now.Year)
+                    throw new Exception("Model Year is not in valid range.");
                 _modelYear = value;
             }
         }
