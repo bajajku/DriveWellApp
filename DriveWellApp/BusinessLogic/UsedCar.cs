@@ -10,7 +10,14 @@ namespace DriveWellApp.BusinessLogic
     {
         int _kiloMeters;
 
-        public float Depriciation
+        public int KiloMeters
+        {
+            get { return _kiloMeters; }
+            set {if (value < 0)
+                    throw new ArgumentOutOfRangeException("Kilometers can not be negative");
+                _kiloMeters = value;}
+        }
+        public float Depreciation
         {
             get 
             { float depericiation =( Price * (DateTime.Now.Year - ModelYear) * 0.1f ) + (Price * (_kiloMeters / 10000) * 0.009f);
@@ -19,7 +26,7 @@ namespace DriveWellApp.BusinessLogic
         }
         public override float NetPrice
         {
-            get => Price - Depriciation * 1.13f; 
+            get => Price - Depreciation * 1.13f; 
         }
 
         public UsedCar(int kiloMeters,string vin ,string carMake, CarType type, float price ,int modelYear) : base(vin,carMake,type,price,modelYear)
