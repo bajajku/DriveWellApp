@@ -13,8 +13,8 @@ namespace DriveWellApp.BusinessLogic
         public int KiloMeters
         {
             get { return _kiloMeters; }
-            set {if (value < 0)
-                    throw new ArgumentOutOfRangeException("Kilometers can not be negative");
+            set {if (value <= 0)
+                    throw new ArgumentOutOfRangeException("Kilometers can not be negative or zero");
                 _kiloMeters = value;}
         }
         public float Depreciation

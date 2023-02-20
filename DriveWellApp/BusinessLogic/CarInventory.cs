@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace DriveWellApp.BusinessLogic
 {
-    internal class Class1
+    public class CarInventory
     {
+
     }
 }
