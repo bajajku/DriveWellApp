@@ -6,13 +6,20 @@
 
     <Grid RowDefinitions="30,30,30,30,30,30,30" ColumnDefinitions="*,5*" RowSpacing="0">
 
-        <Label Text="Vin" Grid.Row="0" Grid.Column="0"/>
-        <Label Text="Car Make" Grid.Row="1" Grid.Column="0"/>
-        <Label Text="Car Type" Grid.Row="2" Grid.Column="0"/>
-        <Label Text="Price" Grid.Row="3" Grid.Column="0"/>
-        <Label Text="Is Used" Grid.Row="4" Grid.Column="0"/>
-        <Label Text="Model Year" Grid.Row="5" Grid.Column="0"/>
-        <Label Text="KiloMeters" Grid.Row="6" Grid.Column="0"/>
+        <Label Text="Vin" Grid.Row="0" Grid.Column="0"
+               HorizontalOptions="End" VerticalOptions="End"/>
+        <Label Text="Car Make" Grid.Row="1" Grid.Column="0"
+               HorizontalOptions="End" VerticalOptions="End"/>
+        <Label Text="Car Type" Grid.Row="2" Grid.Column="0"
+               HorizontalOptions="End" VerticalOptions="Center"/>
+        <Label Text="Price" Grid.Row="3" Grid.Column="0"
+                HorizontalOptions="End" VerticalOptions="End"/>
+        <Label Text="Is Used" Grid.Row="4" Grid.Column="0"
+                HorizontalOptions="End" VerticalOptions="End"/>
+        <Label Text="Model Year" Grid.Row="5" Grid.Column="0"
+                HorizontalOptions="End" VerticalOptions="End"/>
+        <Label Text="KiloMeters" Grid.Row="6" Grid.Column="0"
+                HorizontalOptions="End" VerticalOptions="End"/>
         
     </Grid>
 </ContentPage>
