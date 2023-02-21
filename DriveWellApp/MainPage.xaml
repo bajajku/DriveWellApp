@@ -28,19 +28,20 @@
                 HorizontalOptions="End" VerticalOptions="Center"
                FontSize="Medium"/>
         <StackLayout Grid.Row="0" Grid.Column="1" Orientation="Vertical" Spacing="5">
-            <Entry x:Name="EntSample" FontSize="Medium"
+            <Entry x:Name="EntVin" FontSize="Medium"
              Placeholder="Alphanumeric string - Length 17"     />
             <Entry x:Name="EntCarMake" FontSize="Medium"
                    Placeholder="e.g. BMW, Mercedes, Chevrolet"/>
         </StackLayout>
         <StackLayout Grid.Row="2" Grid.Column="1" Orientation="Vertical" Spacing="5">
             <Picker 
+                x:Name="SelectCarType"
             HorizontalOptions="Start"
             VerticalOptions="EndAndExpand"
                 FontSize="Medium"
                 >
                 <Picker.Items>
-                    <x:String>Hachback</x:String>
+                    <x:String>HatchBack</x:String>
                     <x:String>Sedan</x:String>
                     <x:String>SUV</x:String>
                     <x:String>Coupe</x:String>
@@ -54,6 +55,7 @@
         </StackLayout>
         <StackLayout Grid.Row="5" Grid.Column="1" Orientation="Vertical" Spacing="5">
             <Picker 
+                x:Name="SelectModelYear"
             HorizontalOptions="Start"
             VerticalOptions="EndAndExpand"
                 FontSize="Medium"
@@ -74,23 +76,40 @@
             </Picker>
         </StackLayout>
         <StackLayout Grid.Row="6" Grid.Column="1">
-            <Entry x:Name="EntDistanceKm" FontSize="Medium" Placeholder="e.g. 22000"/>
+            <Entry x:Name="EntDistanceKm" FontSize="Medium" Placeholder="e.g. 22000"
+                   />
         </StackLayout>
 
         <Grid
             Grid.Row="7"
             Grid.Column="1"
-            ColumnDefinitions="*,*"
-            HorizontalOptions="Center"
+            ColumnDefinitions="*,*,*"
+            HorizontalOptions="CenterAndExpand"
             >
-
             <Button
                 Grid.Column="0"
+                Clicked="OnAddCarClicked"
                 x:Name="AddCar"
                 Text="Add Car"
                 VerticalOptions="Center"
-                HorizontalOptions="Center"     
+                HorizontalOptions="Center"
+                Margin="0,2,10,0"
             />
+            <Button
+                Grid.Column="1"
+                x:Name="ClearButton"
+                Clicked="OnClearClicked"
+                Text="Clear"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                Margin="0,2,10,0"/>
+            <Button
+                Grid.Column="2"
+                x:Name="UpdateButton"
+                Text="Update"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                Margin="0,2,10,0"/>
         </Grid>
     </Grid>
 </ContentPage>

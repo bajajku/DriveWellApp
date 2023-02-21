@@ -18,7 +18,7 @@ namespace DriveWellApp.BusinessLogic
         {
             get{ return _vin; }
             set 
-            { if (string.IsNullOrEmpty(value) || !value.All(char.IsLetterOrDigit) || value.Length == 17)
+            { if (string.IsNullOrEmpty(value) || !value.All(char.IsLetterOrDigit) || value.Length != 17)
                     throw new Exception("Vin can only be string containing 17 alphanumeric characters.");
                     _vin = value;       
             }
