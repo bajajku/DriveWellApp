@@ -5,6 +5,7 @@ namespace DriveWellApp;
 public partial class MainPage : ContentPage
 {
 	string carDetails = "";
+	float netPrice = 0;
 	public MainPage()
 	{
 		InitializeComponent();
@@ -24,14 +25,15 @@ public partial class MainPage : ContentPage
 			int kilometer = int.Parse(EntDistanceKm.Text);
 			UsedCar car = new UsedCar(kilometer, vin, carMake, carType, price, modelYear);
 			inventory.AddCar(car);
-			carDetails = $"Vin:{vin} Car Make:{carMake} Car Type:{type} Price:{price} ModelYear:{modelYear} Kilometers:{kilometer}";
+			netPrice = car.NetPrice;
+			carDetails = $"Used car - Vin: {vin} Car Make: {carMake} Car Type: {type} Net Price: {netPrice} ";
 		}
 		else
 		{
-			EntDistanceKm.IsReadOnly = true;
 			Car car = new Car(vin,carMake, carType, price, modelYear);
+			netPrice = car.NetPrice;
 			inventory.AddCar(car);
-            carDetails = $"Vin:{vin} Car Make:{carMake} Car Type:{type} Price:{price} ModelYear:{modelYear}";
+            carDetails = $"Vin: {vin} Car Make: {carMake} Car Type: {type} Net Price: {netPrice} ";
         }
 		DisplayAlert("notification", "Car added", "OK");
 		if (Car1.Text == "Car1 Details Here")
