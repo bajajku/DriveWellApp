@@ -4,7 +4,7 @@
              Title="Drivewell Inc."
              x:Class="DriveWellApp.MainPage">
 
-    <Grid RowDefinitions="45,45,45,45,45,45,45,45" ColumnDefinitions="*,4*" >
+    <Grid RowDefinitions="45,45,45,45,45,45,45,45,45,45,45,45,45" ColumnDefinitions="*,4*" >
 
         <Label Text="Vin" Grid.Row="0" Grid.Column="0"
                HorizontalOptions="End" VerticalOptions="Center"
@@ -76,8 +76,7 @@
             </Picker>
         </StackLayout>
         <StackLayout Grid.Row="6" Grid.Column="1">
-            <Entry x:Name="EntDistanceKm" FontSize="Medium" Placeholder="e.g. 22000"
-                   />
+            <Entry x:Name="EntDistanceKm" FontSize="Medium" Placeholder="e.g. 22000"/>
         </StackLayout>
 
         <Grid
@@ -111,5 +110,15 @@
                 HorizontalOptions="Center"
                 Margin="0,2,10,0"/>
         </Grid>
+        <StackLayout Grid.Row="8" Grid.Column="0" Orientation="Vertical" Spacing="5">
+            <Label Text="Available Cars" FontSize="Large"/>
+        </StackLayout>
+        <StackLayout Grid.Row="9" Grid.ColumnSpan="2" Orientation="Vertical" Spacing="5">
+            <Label x:Name="Car1" Text="Car1 Details Here" FontSize="Medium" HorizontalOptions="Start"/>
+            <Label x:Name="Car2" Text="Car2 Details Here" FontSize="Medium" HorizontalOptions="Start"/>
+            <Label x:Name="Car3" Text="Car3 Details Here" FontSize="Medium" HorizontalOptions="Start"/>
+            <Label x:Name="Car4" Text="Car4 Details Here" FontSize="Medium" HorizontalOptions="Start"/>
+        </StackLayout>
+        
     </Grid>
 </ContentPage>

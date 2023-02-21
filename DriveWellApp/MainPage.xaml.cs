@@ -4,7 +4,7 @@ namespace DriveWellApp;
 
 public partial class MainPage : ContentPage
 {
-
+	string carDetails = "";
 	public MainPage()
 	{
 		InitializeComponent();
@@ -24,14 +24,30 @@ public partial class MainPage : ContentPage
 			int kilometer = int.Parse(EntDistanceKm.Text);
 			UsedCar car = new UsedCar(kilometer, vin, carMake, carType, price, modelYear);
 			inventory.AddCar(car);
+			carDetails = $"Vin:{vin} Car Make:{carMake} Car Type:{type} Price:{price} ModelYear:{modelYear} Kilometers:{kilometer}";
 		}
 		else
 		{
 			EntDistanceKm.IsReadOnly = true;
 			Car car = new Car(vin,carMake, carType, price, modelYear);
 			inventory.AddCar(car);
-		}
+            carDetails = $"Vin:{vin} Car Make:{carMake} Car Type:{type} Price:{price} ModelYear:{modelYear}";
+        }
 		DisplayAlert("notification", "Car added", "OK");
+		if (Car1.Text == "Car1 Details Here")
+		{
+			Car1.Text = carDetails;
+		}else if(Car1.Text != "Car1 Details Here" && Car2.Text == "Car2 Details Here")
+		{
+			Car2.Text = carDetails;
+		}else if(Car2.Text != "Car2 Details Here" && Car3.Text == "Car3 Details Here")
+		{
+			Car3.Text = carDetails;
+		}
+		else
+		{
+			Car4.Text = carDetails;
+		}
     }
 
     private void OnClearClicked(object sender, EventArgs e)
@@ -42,6 +58,7 @@ public partial class MainPage : ContentPage
 		EntPrice.Text = null;
 		SelectCarType.SelectedItem = null;
 		SelectModelYear.SelectedItem = null;
+		ClickBox.IsChecked = false;
 	}
 }
 
