@@ -13,23 +13,70 @@
                HorizontalOptions="End" VerticalOptions="End"
                FontSize="Medium"/>
         <Label Text="Car Type" Grid.Row="2" Grid.Column="0"
-               HorizontalOptions="End" VerticalOptions="End"/>
+               HorizontalOptions="End" VerticalOptions="Center"
+               FontSize="Medium"/>
         <Label Text="Price" Grid.Row="3" Grid.Column="0"
-                HorizontalOptions="End" VerticalOptions="End"/>
+                HorizontalOptions="End" VerticalOptions="Center"
+               FontSize="Medium"/>
         <Label Text="Is Used" Grid.Row="4" Grid.Column="0"
-                HorizontalOptions="End" VerticalOptions="End"/>
+                HorizontalOptions="End" VerticalOptions="Center"
+               FontSize="Medium"/>
         <Label Text="Model Year" Grid.Row="5" Grid.Column="0"
-                HorizontalOptions="End" VerticalOptions="End"/>
+                HorizontalOptions="End" VerticalOptions="Center"
+               FontSize="Medium"/>
         <Label Text="KiloMeters" Grid.Row="6" Grid.Column="0"
-                HorizontalOptions="End" VerticalOptions="End"/>
+                HorizontalOptions="End" VerticalOptions="Center"
+               FontSize="Medium"/>
         <StackLayout Grid.Row="0" Grid.Column="1" Orientation="Vertical" Spacing="5">
             <Entry x:Name="EntSample" FontSize="Medium"
-             Placeholder="jsk"     />
-            <Entry x:Name="EntSize" />
+             Placeholder="Alphanumeric string - Length 17"     />
+            <Entry x:Name="EntCarMake" FontSize="Medium"
+                   Placeholder="e.g. BMW, Mercedes, Chevrolet"/>
+        </StackLayout>
+        <StackLayout Grid.Row="2" Grid.Column="1" Orientation="Vertical" Spacing="5">
+            <Picker 
+            HorizontalOptions="Start"
+            VerticalOptions="EndAndExpand"
+                FontSize="Medium"
+                >
+                <Picker.Items>
+                    <x:String>Hachback</x:String>
+                    <x:String>Sedan</x:String>
+                    <x:String>SUV</x:String>
+                    <x:String>Coupe</x:String>
+                </Picker.Items>
+            </Picker>
         </StackLayout>
         <StackLayout Grid.Row="3" Grid.Column="1">
-            <Entry x:Name="EntPrice" FontSize="Medium" Placeholder="jss"/>
+            <Entry x:Name="EntPrice" FontSize="Medium" Placeholder="e.g. 35000.75"
+                   />
+            <CheckBox x:Name="ClickBox" />
         </StackLayout>
+        <StackLayout Grid.Row="5" Grid.Column="1" Orientation="Vertical" Spacing="5">
+            <Picker 
+            HorizontalOptions="Start"
+            VerticalOptions="EndAndExpand"
+                FontSize="Medium"
+                >
+                <Picker.Items>
+                    <x:String>2013</x:String>
+                    <x:String>2014</x:String>
+                    <x:String>2015</x:String>
+                    <x:String>2016</x:String>
+                    <x:String>2017</x:String>
+                    <x:String>2018</x:String>
+                    <x:String>2019</x:String>
+                    <x:String>2020</x:String>
+                    <x:String>2021</x:String>
+                    <x:String>2022</x:String>
+                    <x:String>2023</x:String>
+                </Picker.Items>
+            </Picker>
+        </StackLayout>
+        <StackLayout Grid.Row="6" Grid.Column="1">
+            <Entry x:Name="EntDistanceKm" FontSize="Medium" Placeholder="e.g. 22000"/>
+        </StackLayout>
+
 
 
 
