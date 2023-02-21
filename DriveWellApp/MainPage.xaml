@@ -5,7 +5,7 @@
              x:Class="DriveWellApp.MainPage"
              >
 
-    <Grid RowDefinitions="45,45,45,45,45,45,45,45,45,45,45,45,45,45" ColumnDefinitions="*,4*" >
+    <Grid RowDefinitions="45,45,45,45,45,45,45,45,45,45,45,45,45,45" ColumnDefinitions="*,4*" > 
 
         <Label Text="Vin" Grid.Row="0" Grid.Column="0"
                HorizontalOptions="End" VerticalOptions="Center"

@@ -6,15 +6,16 @@ using System.Threading.Tasks;
 
 namespace DriveWellApp.BusinessLogic
 {
-    public class Car
+    public class Car // creating car class
     {
+        //all field variables for this class
         string _vin;
         string _carMake;
         CarType _type;
         float _price;
         int _modelYear;
         
-        public string Vin
+        public string Vin // accessor and mutator for vin
         {
             get{ return _vin; }
             set 
@@ -24,7 +25,7 @@ namespace DriveWellApp.BusinessLogic
             }
 
         }
-        public string CarMake
+        public string CarMake// accessor and mutator for car make
         {
             get => _carMake;
             set
@@ -34,7 +35,7 @@ namespace DriveWellApp.BusinessLogic
             }
         }
 
-        public CarType CarType
+        public CarType CarType// accessor and mutator for car type enum
         {
             get => _type;
             set
@@ -43,7 +44,7 @@ namespace DriveWellApp.BusinessLogic
             }
         }
 
-        public float Price
+        public float Price// accessor and mutator for price
         {
             get => _price; 
             set
@@ -53,7 +54,7 @@ namespace DriveWellApp.BusinessLogic
             }
         }
 
-        public int ModelYear
+        public int ModelYear// accessor and mutator for model year
         {
             get => _modelYear; 
             set
@@ -62,12 +63,12 @@ namespace DriveWellApp.BusinessLogic
                 _modelYear = value;
             }
         }
-        public virtual float NetPrice
+        public virtual float NetPrice // computed property calculating price
         {
             get => Price + (Price * 0.13f);
         }
 
-        public Car(string vin,string carMake,CarType type,float price,int modelYear)
+        public Car(string vin,string carMake,CarType type,float price,int modelYear) // initializor for Car class
         {
             Vin = vin;
             CarMake = carMake;

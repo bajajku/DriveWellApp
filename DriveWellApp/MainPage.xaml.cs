@@ -12,12 +12,12 @@ public partial class MainPage : ContentPage
 	
 	}
 
-    private void OnAddCarClicked(object sender, EventArgs e)
+    private void OnAddCarClicked(object sender, EventArgs e) // added event handler for AddCar button
     {
 		string vin = EntVin.Text;
 		string carMake = EntCarMake.Text;
 		string type = SelectCarType.SelectedItem.ToString();
-		if(type == "SUV")
+		if(type == "SUV") // changing image as per car selection
 		{
 			CarImage.Source = "suv.png";
 		}else if(type == "Coupe")
@@ -35,7 +35,7 @@ public partial class MainPage : ContentPage
             CarImage.Source = "hatchback.png";
 
         }
-        CarType carType = (CarType)Enum.Parse(typeof(CarType),type);
+        CarType carType = (CarType)Enum.Parse(typeof(CarType),type); // taking inputs for making car/used car objects
 		float price = float.Parse(EntPrice.Text);
 		int modelYear = int.Parse(SelectModelYear.SelectedItem.ToString());
 		CarInventory inventory = new CarInventory();
@@ -54,7 +54,7 @@ public partial class MainPage : ContentPage
 			inventory.AddCar(car);
             carDetails = $"Vin: {vin} Car Make: {carMake} Car Type: {type} Net Price: {netPrice} ";
         }
-		if (Car1.Text == "Car1 Details Here")
+		if (Car1.Text == "Car1 Details Here")// printing car created at UI
 		{
 			Car1.Text = carDetails;
 			DisplayAlert("Car Added", $"Car Type:{type}\nModel Year:{modelYear}", "OK");
@@ -84,7 +84,7 @@ public partial class MainPage : ContentPage
 		}
     }
 
-    private void OnClearClicked(object sender, EventArgs e)
+    private void OnClearClicked(object sender, EventArgs e) // clearing all fields when clear button is clicked
     {
 		EntVin.Text = null;
 		EntDistanceKm.Text = null;

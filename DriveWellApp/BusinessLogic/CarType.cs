@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DriveWellApp.BusinessLogic
 {
-    public enum CarType
+    public enum CarType // creating enum for car types
     {
         Coupe,
         Sedan,

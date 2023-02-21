@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace DriveWellApp.BusinessLogic
 {
-    public class CarInventory
+    public class CarInventory // creating car inventory class for storing car objects
     {
         private List<Car> cars;
         
 
-        public CarInventory() 
+        public CarInventory() // putting two hardcoded value in cars list
         
         {
             cars = new List<Car>();
@@ -21,7 +21,7 @@ namespace DriveWellApp.BusinessLogic
             cars.Add(car2);
 
         }
-        public Car GetByVin(string vin)
+        public Car GetByVin(string vin) 
         {
             foreach(Car car in cars)
             {
@@ -30,14 +30,14 @@ namespace DriveWellApp.BusinessLogic
             }
         return null;
         }
-        public void AddCar(Car car)
+        public void AddCar(Car car)// function to add car
         {
             if (GetByVin(car.Vin) == null)
             {
                 cars.Add(car);
             }
         }
-        public List<Car> Cars
+        public List<Car> Cars // computed property to return cars list
         {
             get { return cars; }
         }
