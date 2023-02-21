@@ -4,7 +4,7 @@
              Title="Drivewell Inc."
              x:Class="DriveWellApp.MainPage">
 
-    <Grid RowDefinitions="45,45,45,45,45,45,45" ColumnDefinitions="*,4*" RowSpacing="0">
+    <Grid RowDefinitions="45,45,45,45,45,45,45,45" ColumnDefinitions="*,4*" >
 
         <Label Text="Vin" Grid.Row="0" Grid.Column="0"
                HorizontalOptions="End" VerticalOptions="Center"
@@ -77,12 +77,20 @@
             <Entry x:Name="EntDistanceKm" FontSize="Medium" Placeholder="e.g. 22000"/>
         </StackLayout>
 
+        <Grid
+            Grid.Row="7"
+            Grid.Column="1"
+            ColumnDefinitions="*,*"
+            HorizontalOptions="Center"
+            >
 
-
-
-
-
-
-
+            <Button
+                Grid.Column="0"
+                x:Name="AddCar"
+                Text="Add Car"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"     
+            />
+        </Grid>
     </Grid>
 </ContentPage>
