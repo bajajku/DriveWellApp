@@ -9,6 +9,7 @@ public partial class MainPage : ContentPage
 	public MainPage()
 	{
 		InitializeComponent();
+	
 	}
 
     private void OnAddCarClicked(object sender, EventArgs e)
@@ -16,7 +17,25 @@ public partial class MainPage : ContentPage
 		string vin = EntVin.Text;
 		string carMake = EntCarMake.Text;
 		string type = SelectCarType.SelectedItem.ToString();
-		CarType carType = (CarType)Enum.Parse(typeof(CarType),type);
+		if(type == "SUV")
+		{
+			CarImage.Source = "suv.png";
+		}else if(type == "Coupe")
+		{
+			CarImage.Source = "coupe.png";
+
+        }
+        else if (type == "Sedan")
+        {
+            CarImage.Source = "sedan.png";
+
+        }
+        else if (type == "HatchBack")
+        {
+            CarImage.Source = "hatchback.png";
+
+        }
+        CarType carType = (CarType)Enum.Parse(typeof(CarType),type);
 		float price = float.Parse(EntPrice.Text);
 		int modelYear = int.Parse(SelectModelYear.SelectedItem.ToString());
 		CarInventory inventory = new CarInventory();
@@ -35,7 +54,7 @@ public partial class MainPage : ContentPage
 			inventory.AddCar(car);
             carDetails = $"Vin: {vin} Car Make: {carMake} Car Type: {type} Net Price: {netPrice} ";
         }
-		DisplayAlert("notification", "Car added", "OK");
+		DisplayAlert("Car Added",$"Car Type:{type}\nModel Year:{modelYear}", "OK");
 		if (Car1.Text == "Car1 Details Here")
 		{
 			Car1.Text = carDetails;
