@@ -54,20 +54,33 @@ public partial class MainPage : ContentPage
 			inventory.AddCar(car);
             carDetails = $"Vin: {vin} Car Make: {carMake} Car Type: {type} Net Price: {netPrice} ";
         }
-		DisplayAlert("Car Added",$"Car Type:{type}\nModel Year:{modelYear}", "OK");
 		if (Car1.Text == "Car1 Details Here")
 		{
 			Car1.Text = carDetails;
-		}else if(Car1.Text != "Car1 Details Here" && Car2.Text == "Car2 Details Here")
+			DisplayAlert("Car Added", $"Car Type:{type}\nModel Year:{modelYear}", "OK");
+
+        }
+        else if(Car1.Text != "Car1 Details Here" && Car2.Text == "Car2 Details Here")
 		{
 			Car2.Text = carDetails;
-		}else if(Car2.Text != "Car2 Details Here" && Car3.Text == "Car3 Details Here")
+			DisplayAlert("Car Added", $"Car Type:{type}\nModel Year:{modelYear}", "OK");
+
+        }
+        else if(Car2.Text != "Car2 Details Here" && Car3.Text == "Car3 Details Here")
 		{
 			Car3.Text = carDetails;
-		}
-		else
+			DisplayAlert("Car Added", $"Car Type:{type}\nModel Year:{modelYear}", "OK");
+
+        }
+		else if((Car3.Text != "Car3 Details Here" && Car4.Text == "Car4 Details Here"))
 		{
 			Car4.Text = carDetails;
+			DisplayAlert("Car Added", $"Car Type:{type}\nModel Year:{modelYear}", "OK");
+
+        }
+		else
+		{
+			DisplayAlert("Car Display List Full","Car cannot be added to Display list","OK");
 		}
     }
 

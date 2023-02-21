@@ -5,7 +5,7 @@
              x:Class="DriveWellApp.MainPage"
              >
 
-    <Grid RowDefinitions="45,45,45,45,45,45,45,45,45,45,45,45,45,45,45" ColumnDefinitions="*,4*" >
+    <Grid RowDefinitions="45,45,45,45,45,45,45,45,45,45,45,45,45,45" ColumnDefinitions="*,4*" >
 
         <Label Text="Vin" Grid.Row="0" Grid.Column="0"
                HorizontalOptions="End" VerticalOptions="Center"
@@ -77,7 +77,8 @@
             </Picker>
         </StackLayout>
         <StackLayout Grid.Row="6" Grid.Column="1">
-            <Entry x:Name="EntDistanceKm" FontSize="Medium" Placeholder="e.g. 22000"/>
+            <Entry x:Name="EntDistanceKm" FontSize="Medium" Placeholder="e.g. 22000"
+                   IsEnabled="{Binding Source={x:Reference ClickBox}, Path=IsChecked}"/>
         </StackLayout>
 
         <Grid
@@ -120,7 +121,7 @@
             <Label x:Name="Car3" Text="Car3 Details Here" FontSize="Medium" HorizontalOptions="Start"/>
             <Label x:Name="Car4" Text="Car4 Details Here" FontSize="Medium" HorizontalOptions="Start"/>
         </StackLayout>
-        <StackLayout Grid.Row="14" Grid.Column="1" Orientation="Vertical" Spacing="5"
+        <StackLayout Grid.Row="13" Grid.Column="1" Orientation="Vertical" Spacing="5"
                      HorizontalOptions="Center">
             <Image x:Name="CarImage" Source = "coupe.png" WidthRequest="200" HeightRequest="200"/>
         </StackLayout>
