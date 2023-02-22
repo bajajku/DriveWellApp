@@ -40,6 +40,7 @@
             HorizontalOptions="Start"
             VerticalOptions="EndAndExpand"
                 FontSize="Medium"
+                
                 >
                 <Picker.Items>
                     <x:String>HatchBack</x:String>

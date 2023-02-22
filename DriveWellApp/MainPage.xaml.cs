@@ -9,7 +9,6 @@ public partial class MainPage : ContentPage
 	public MainPage()
 	{
 		InitializeComponent();
-	
 	}
 
     private void OnAddCarClicked(object sender, EventArgs e) // added event handler for AddCar button
@@ -42,7 +41,7 @@ public partial class MainPage : ContentPage
 		if (ClickBox.IsChecked)
 		{
 			int kilometer = int.Parse(EntDistanceKm.Text);
-			UsedCar car = new UsedCar(kilometer, vin, carMake, carType, price, modelYear);
+			Car car = new UsedCar(kilometer, vin, carMake, carType, price, modelYear);
 			inventory.AddCar(car);
 			netPrice = car.NetPrice;
 			carDetails = $"Used car - Vin: {vin} Car Make: {carMake} Car Type: {type} Net Price: {netPrice} ";
